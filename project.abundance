@@ -70,8 +70,8 @@
         },
         {
           "atomType": "Molecule",
-          "x": 0.28505291005291006,
-          "y": 0.5654596100278552,
+          "x": 0.27843915343915343,
+          "y": 0.5013927576601671,
           "uniqueID": "id-2109",
           "name": "arm segment",
           "topLevel": false,
@@ -1168,13 +1168,219 @@
                 }
               ],
               "fileTypeVersion": 1
+            },
+            {
+              "atomType": "GitHubMolecule",
+              "x": 0.4431216931216931,
+              "y": 0.14484679665738162,
+              "uniqueID": "id-2372",
+              "name": "Fillet-",
+              "ioValues": [
+                {
+                  "name": "Shape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Radius",
+                  "ioValue": 2
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 0.98,
+                  "y": 0.5,
+                  "uniqueID": "id-2363",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0.025384615384615384,
+                  "y": 0.15384615384615385,
+                  "uniqueID": "id-2364",
+                  "name": "Shape",
+                  "type": "geometry"
+                },
+                {
+                  "atomType": "Rectangle",
+                  "x": 0.15013227513227512,
+                  "y": 0.2562674094707521,
+                  "uniqueID": "id-2365",
+                  "ioValues": [
+                    {
+                      "name": "x length",
+                      "ioValue": 10
+                    },
+                    {
+                      "name": "y length",
+                      "ioValue": 10
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.3353174603174603,
+                  "y": 0.15598885793871867,
+                  "uniqueID": "id-2366",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 10
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0.025384615384615384,
+                  "y": 0.24615384615384617,
+                  "uniqueID": "id-2367",
+                  "name": "Radius",
+                  "type": "number"
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.4920634920634921,
+                  "y": 0.5766016713091923,
+                  "uniqueID": "id-2368",
+                  "ioValues": [
+                    {
+                      "name": "inputShape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "radius",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "interpreterVersion": 0,
+                  "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.3597883597883598,
+                  "y": 0.777158774373259,
+                  "uniqueID": "id-2369",
+                  "ioValues": [
+                    {
+                      "name": "inputShape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "radius",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "interpreterVersion": 0,
+                  "code": "      //Inputs:[inputShape, radius]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let chamferedShape = await Fillet(inputShape, radius);\n      \n      \n      //Shapes stored in the library have tags, a color, a plane, and a bill of materials like this. We don't modify them here\n      let shape1 = {\n        geometry: [chamferedShape],\n        tags: importedShape.tags,\n        color: importedShape.color,\n        plane: importedShape.plane,\n        bom: importedShape.bom\n      }\n      \n      //We could at this point return shape1 as a complete shape and it will be automatically written to the library for us\n      return shape1"
+                },
+                {
+                  "atomType": "Rectangle",
+                  "x": 0.07738095238095238,
+                  "y": 0.8495821727019498,
+                  "uniqueID": "id-2370",
+                  "ioValues": [
+                    {
+                      "name": "x length",
+                      "ioValue": 100
+                    },
+                    {
+                      "name": "y length",
+                      "ioValue": 100
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.17539682539682538,
+                  "y": 0.8217270194986073,
+                  "uniqueID": "id-2371",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 100
+                    }
+                  ]
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "inputShape",
+                  "ap1ID": "id-2364",
+                  "ap2ID": "id-2368"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-2365",
+                  "ap2ID": "id-2366"
+                },
+                {
+                  "ap2Name": "radius",
+                  "ap1ID": "id-2367",
+                  "ap2ID": "id-2368"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-2368",
+                  "ap2ID": "id-2363"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-2370",
+                  "ap2ID": "id-2371"
+                },
+                {
+                  "ap2Name": "inputShape",
+                  "ap1ID": "id-2371",
+                  "ap2ID": "id-2369"
+                }
+              ],
+              "parentRepo": {
+                "lastFoundGit": "2026-05-09T18:23:39.261Z",
+                "privateRepo": false,
+                "repoName": "Fillet-",
+                "dateCreated": "2025-03-13T05:08:33Z",
+                "likes": 0,
+                "readMe": "https://raw.githubusercontent.com/BarbourSmith/Fillet-/master/README.md?sanitize=true",
+                "yyyy": 2025,
+                "topMoleculeID": 1741842512908,
+                "githubMoleculesUsed": [],
+                "html_url": "https://github.com/BarbourSmith/Fillet-",
+                "topics": [],
+                "parentRepo": null,
+                "forks": 0,
+                "dateModified": "739604",
+                "ranking": 8.4,
+                "searchField": "fillet- barboursmith fillets every edge of an input shape ",
+                "owner": "BarbourSmith",
+                "description": "Fillets every edge of an input shape",
+                "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Fillet-/master/project.abundance?sanitize=true",
+                "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Fillet-/master/project.svg?sanitize=true",
+                "isLocal": false
+              },
+              "unitsKey": "MM",
+              "fileTypeVersion": 1,
+              "lastReloadedFromGithubAt": 1778365332270
             }
           ],
           "allConnectors": [
             {
-              "ap2Name": "Shape 2",
+              "ap2Name": "Shape",
               "ap1ID": "id-2128",
-              "ap2ID": "id-2150"
+              "ap2ID": "id-2372"
             },
             {
               "ap2Name": "number or geometry",
@@ -1200,6 +1406,11 @@
               "ap2Name": "geometry",
               "ap1ID": "id-2129",
               "ap2ID": "id-2151"
+            },
+            {
+              "ap2Name": "Shape 2",
+              "ap1ID": "id-2372",
+              "ap2ID": "id-2150"
             }
           ],
           "fileTypeVersion": 1
@@ -1550,11 +1761,6 @@
           "ap2ID": "id-2296"
         },
         {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-2296",
-          "ap2ID": "id-2107"
-        },
-        {
           "ap2Name": "retain",
           "ap1ID": "id-2296",
           "ap2ID": "id-2354"
@@ -1573,6 +1779,11 @@
           "ap2Name": "remove",
           "ap1ID": "id-2348",
           "ap2ID": "id-2354"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-2354",
+          "ap2ID": "id-2107"
         }
       ],
       "fileTypeVersion": 1
@@ -1591,8 +1802,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.5720899470899471,
-      "y": 0.5236768802228412,
+      "x": 0.5006613756613757,
+      "y": 0.34261838440111425,
       "uniqueID": "id-2334",
       "ioValues": [
         {
@@ -1601,7 +1812,8 @@
         },
         {
           "name": "xDist",
-          "ioValue": 28
+          "ioValue": 17,
+          "currentEquation": "17"
         },
         {
           "name": "yDist",
@@ -1612,6 +1824,196 @@
           "ioValue": 0
         }
       ]
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.6137566137566137,
+      "y": 0.3955431754874652,
+      "uniqueID": "id-2412",
+      "name": "RotatePattern",
+      "ioValues": [
+        {
+          "name": "Shape",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Number",
+          "ioValue": 8,
+          "currentEquation": "8"
+        },
+        {
+          "name": "Angle",
+          "ioValue": 45
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-2404",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-2405",
+          "name": "Shape",
+          "type": "geometry"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.24615384615384617,
+          "uniqueID": "id-2406",
+          "name": "Number"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.3384615384615385,
+          "uniqueID": "id-2407",
+          "name": "Angle"
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.19136960600375233,
+          "y": 0.20055710306406688,
+          "uniqueID": "id-2408",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.2786116322701689,
+          "y": 0.36490250696378834,
+          "uniqueID": "id-2409",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 100
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Code",
+          "x": 0.48484848484848486,
+          "y": 0.7198795180722891,
+          "uniqueID": "id-2410",
+          "ioValues": [
+            {
+              "name": "Shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Number",
+              "ioValue": 8
+            },
+            {
+              "name": "Angle",
+              "ioValue": 45
+            }
+          ],
+          "interpreterVersion": 0,
+          "code": "\nconst Inputs = [\n  { inputName: \"Shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"Number\", type: \"number\", defaultValue: 5 },\n  { inputName: \"Angle\", type: \"number\", defaultValue: 10 }\n];\n\n\nlet shapesArray = [];\nfor (let i = 0; i < Number; i++) {\n    let rotatedShape = await Rotate(Shape, 0, 0, Angle * i);\n    shapesArray.push(rotatedShape);\n}\n\nlet assembledShape = await Assembly(shapesArray)\n\nreturn assembledShape;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**\n    To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n    If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n    Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n    https://replicad.xyz/docs/introapp/UserGuide.html \n    Return a replicad object that includes geometry, color, tags and plane. \n\n\n    Example Code Atom:\n\n      Inputs:[shape, x];\n\n      let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n\n      return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n\n      - See more examples at _______ \n\n\n    */\n"
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.4586864406779661,
+          "y": 0.2618384401114206,
+          "uniqueID": "id-2411",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ]
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "Shape",
+          "ap1ID": "id-2405",
+          "ap2ID": "id-2410"
+        },
+        {
+          "ap2Name": "Number",
+          "ap1ID": "id-2406",
+          "ap2ID": "id-2410"
+        },
+        {
+          "ap2Name": "Angle",
+          "ap1ID": "id-2407",
+          "ap2ID": "id-2410"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-2408",
+          "ap2ID": "id-2409"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-2409",
+          "ap2ID": "id-2411"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-2410",
+          "ap2ID": "id-2404"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-05-09T18:23:39.261Z",
+        "repoName": "RotatePattern",
+        "dateCreated": "2024-10-01T18:14:59Z",
+        "likes": 0,
+        "readMe": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/README.md?sanitize=true",
+        "yyyy": 2024,
+        "topMoleculeID": 1727806499549,
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/BarbourSmith/RotatePattern",
+        "topics": [],
+        "parentRepo": null,
+        "forks": 0,
+        "dateModified": "739160",
+        "ranking": 24.3,
+        "searchField": "rotatepattern barboursmith",
+        "owner": "BarbourSmith",
+        "description": "",
+        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "Inches",
+      "fileTypeVersion": 1,
+      "lastReloadedFromGithubAt": 1778365487293
     }
   ],
   "allConnectors": [
@@ -1634,6 +2036,11 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-2330",
       "ap2ID": "id-1907"
+    },
+    {
+      "ap2Name": "Shape",
+      "ap1ID": "id-2334",
+      "ap2ID": "id-2412"
     }
   ],
   "unitsKey": "MM",
