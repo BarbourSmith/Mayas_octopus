@@ -1424,8 +1424,8 @@
           "ioValues": [
             {
               "name": "Number",
-              "ioValue": 8,
-              "currentEquation": "8"
+              "ioValue": 7,
+              "currentEquation": "7"
             },
             {
               "name": "Geometry",
@@ -1503,7 +1503,7 @@
                 },
                 {
                   "name": "Number",
-                  "ioValue": 8
+                  "ioValue": 7
                 },
                 {
                   "name": "distX",
@@ -1797,6 +1797,10 @@
         {
           "name": "Shape 1",
           "ioValue": null
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": null
         }
       ]
     },
@@ -1843,7 +1847,8 @@
         },
         {
           "name": "Angle",
-          "ioValue": 45
+          "ioValue": 45,
+          "currentEquation": "45"
         }
       ],
       "topLevel": false,
@@ -2014,6 +2019,51 @@
       "unitsKey": "Inches",
       "fileTypeVersion": 1,
       "lastReloadedFromGithubAt": 1778365487293
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.7843915343915343,
+      "y": 0.6824512534818942,
+      "uniqueID": "id-2438",
+      "name": "Extract Tag",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tag": "Not Keep Out",
+      "tagIndex": 0
+    },
+    {
+      "atomType": "Export",
+      "x": 0.7929894179894179,
+      "y": 0.37325905292479106,
+      "uniqueID": "id-2441",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "File Type",
+          "ioValue": "STL",
+          "currentEquation": "STL"
+        },
+        {
+          "name": "Resolution (dpi)",
+          "ioValue": 96
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "Mayas_octopus",
+          "currentEquation": "Mayas_octopus"
+        }
+      ],
+      "type": null,
+      "resolution": 96,
+      "importIndex": 0,
+      "partName": "Mayas_octopus"
     }
   ],
   "allConnectors": [
@@ -2033,14 +2083,29 @@
       "ap2ID": "id-2334"
     },
     {
-      "ap2Name": "number or geometry",
+      "ap2Name": "geometry",
       "ap1ID": "id-2330",
-      "ap2ID": "id-1907"
+      "ap2ID": "id-2438"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-2330",
+      "ap2ID": "id-2441"
     },
     {
       "ap2Name": "Shape",
       "ap1ID": "id-2334",
       "ap2ID": "id-2412"
+    },
+    {
+      "ap2Name": "Shape 2",
+      "ap1ID": "id-2412",
+      "ap2ID": "id-2330"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-2438",
+      "ap2ID": "id-1907"
     }
   ],
   "unitsKey": "MM",
