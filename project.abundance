@@ -19,34 +19,6 @@
       ]
     },
     {
-      "atomType": "Circle",
-      "x": 0.2830687830687831,
-      "y": 0.6462395543175488,
-      "uniqueID": "id-1909",
-      "ioValues": [
-        {
-          "name": "diameter",
-          "ioValue": 35.7
-        }
-      ]
-    },
-    {
-      "atomType": "Extrude",
-      "x": 0.3835978835978836,
-      "y": 0.6573816155988859,
-      "uniqueID": "id-1912",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "height",
-          "ioValue": 40
-        }
-      ]
-    },
-    {
       "atomType": "Assembly",
       "x": 0.5,
       "y": 0.6963788300835655,
@@ -104,7 +76,7 @@
     {
       "atomType": "Export",
       "x": 0.7929894179894179,
-      "y": 0.37325905292479106,
+      "y": 0.3899721448467966,
       "uniqueID": "id-2441",
       "ioValues": [
         {
@@ -113,8 +85,8 @@
         },
         {
           "name": "File Type",
-          "ioValue": "STL",
-          "currentEquation": "STL"
+          "ioValue": "STEP",
+          "currentEquation": "STEP"
         },
         {
           "name": "Resolution (dpi)",
@@ -126,7 +98,7 @@
           "currentEquation": "Mayas_octopus"
         }
       ],
-      "type": null,
+      "type": "STEP",
       "resolution": 96,
       "importIndex": 0,
       "partName": "Mayas_octopus"
@@ -2610,11 +2582,6 @@
     }
   ],
   "allConnectors": [
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-1909",
-      "ap2ID": "id-1912"
-    },
     {
       "ap2Name": "geometry",
       "ap1ID": "id-2330",
