@@ -844,8 +844,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.20502645502645506,
-      "y": 0.2256267409470752,
+      "x": 0.20238095238095238,
+      "y": 0.20612813370473537,
       "uniqueID": "id-2105",
       "name": "Arm",
       "topLevel": false,
@@ -2540,6 +2540,36 @@
             }
           ],
           "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Export",
+          "x": 0.7473544973544973,
+          "y": 0.8857938718662952,
+          "uniqueID": "id-3159",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "File Type",
+              "ioValue": "STEP",
+              "currentEquation": "STEP"
+            },
+            {
+              "name": "Resolution (dpi)",
+              "ioValue": 96
+            },
+            {
+              "name": "Part Name",
+              "ioValue": "Arm",
+              "currentEquation": "Arm"
+            }
+          ],
+          "type": "STEP",
+          "resolution": 96,
+          "importIndex": 0,
+          "partName": "Arm"
         }
       ],
       "allConnectors": [
@@ -2562,6 +2592,11 @@
           "ap2Name": "number or geometry",
           "ap1ID": "id-2354",
           "ap2ID": "id-2107"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-2354",
+          "ap2ID": "id-3159"
         },
         {
           "ap2Name": "retain",
